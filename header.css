@@ -8,6 +8,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: pink;
 }
 
 header nav {
@@ -62,3 +63,4 @@ header nav .toggler {
 .hamburgerWrap::after {
     top: 7px;
 }
+
