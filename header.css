@@ -8,7 +8,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(207, 20, 51);
 }
 
 header nav {
@@ -20,19 +19,23 @@ nav input {
     width: 2rem;
 }
 
-header nav .menu {
-    display: none;
+header nav .smallMenu a {
+    padding: 0.5rem;
+    border-bottom: 1px  solid #999999;
 }
 
 header nav .toggler {
     position: absolute;
     top: 2rem;
     right: 2rem;
-    opacity: 0.4;
-    z-index: 2;
+    opacity: 0;
+    z-index: 3;
 }
 
 .dropMenu {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
     height: 2rem;
     width: 2rem;
     padding: 0.3rem;
@@ -41,12 +44,18 @@ header nav .toggler {
     align-items: center;
 }
 
+header nav .menu {
+    display: none;
+}
+
 .dropMenu .hamburgerWrap {
     position: relative;
     height: 4px;
     width: 100%;
     border-radius: 2px;
     background-color: #555555;
+    z-index: 2;
+    transition: all .5s ease-in-out;
 }
 
 .hamburgerWrap::before, 
@@ -58,9 +67,63 @@ header nav .toggler {
     border-radius: 2px;
     top: -7px;
     background-color: #555555;
+    z-index: 2;
+    transition: all .5s ease-in-out;
 }
 
 .hamburgerWrap::after {
     top: 7px;
+}
+
+header nav .toggler:checked + .dropMenu .hamburgerWrap {
+    transform: rotate(45deg);
+    transition: transform .5s ease-in-out;
+}
+
+header nav .toggler:checked + .dropMenu .hamburgerWrap::before,
+header nav .toggler:checked + .dropMenu .hamburgerWrap::after {
+    transform: rotate(90deg);
+    top: 0;
+    transition: all .5s ease-in-out;
+}
+
+.smallMenu {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    display: grid;
+    text-align: center;
+    background-color: white;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity ease-out 0.25s;
+}
+
+header nav .toggler:checked + .dropMenu .smallMenu {
+    opacity: 1;
+    transition: opacity ease-in 0.25s;
+}
+
+header nav .toggler:checked:hover + .dropMenu > div.hamburgerWrap {
+    transform: rotate(135deg);
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        padding: 3rem;
+    }
+
+    nav input,
+    nav .dropMenu {
+        display: none;
+    }
+
+    header nav .menu {
+        display: flex;
+    }
+
+    header nav .menu > * {
+        padding-left: 1rem;
+    }
 }
 
