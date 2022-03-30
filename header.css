@@ -19,7 +19,20 @@ nav input {
     width: 2rem;
 }
 
+.smallMenu {
+    position: absolute;
+    top: 2rem;
+    right: -2rem;
+    display: grid;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity ease-out 0.25s;
+}
+
 header nav .smallMenu a {
+    width: 8rem;
     padding: 0.5rem;
     border-bottom: 1px  solid #999999;
 }
@@ -53,7 +66,7 @@ header nav .menu {
     height: 4px;
     width: 100%;
     border-radius: 2px;
-    background-color: #555555;
+    background-color: #999999;
     z-index: 2;
     transition: all .5s ease-in-out;
 }
@@ -65,14 +78,14 @@ header nav .menu {
     height: 4px;
     width: 100%;
     border-radius: 2px;
-    top: -7px;
-    background-color: #555555;
+    top: -8px;
+    background-color: #999999;
     z-index: 2;
     transition: all .5s ease-in-out;
 }
 
 .hamburgerWrap::after {
-    top: 7px;
+    top: 8px;
 }
 
 header nav .toggler:checked + .dropMenu .hamburgerWrap {
@@ -85,18 +98,6 @@ header nav .toggler:checked + .dropMenu .hamburgerWrap::after {
     transform: rotate(90deg);
     top: 0;
     transition: all .5s ease-in-out;
-}
-
-.smallMenu {
-    position: absolute;
-    top: 2rem;
-    right: 0;
-    display: grid;
-    text-align: center;
-    background-color: white;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity ease-out 0.25s;
 }
 
 header nav .toggler:checked + .dropMenu .smallMenu {
