@@ -33,12 +33,15 @@
 }
 
 h2 {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 2rem;
 }
 
-.padded:first-child p {
-    color: #555555;
+.padded p {
+    color: #111111;
+}
+
+.backBlob > p {
     width: 70%;
 }
 
@@ -49,7 +52,7 @@ section.padded button {
     border-radius: 25px;
     background-color: white;
     height: 52px;
-    width: 120px;
+    width: 130px;
 }
 
 section.padded button::after {
@@ -65,14 +68,13 @@ section.padded button::after {
 
 }
 
-main section.bcWrap {
+main div.bcWrap {
     padding-top: 4rem;
     padding-bottom: 1rem;
-    background-color: #FF3998;
     background-image: url('/assets/background.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top 0 right -50px left -50px;
+    background-position: center;
 }
 
 .companies {
@@ -168,4 +170,145 @@ section p a {
 .priceWrap .row3 > div {
     font-size: 1.1rem;
     color: #777777;
+}
+
+section.halfPadded {
+    margin-bottom: 5rem;
+}
+
+section.padded:last-child {
+    margin-top: 4rem;
+}
+
+.greenLady {
+    margin-top: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.greenLady h1,
+.greenLady p {
+    width: 55%;
+}
+
+hr {
+    margin: 0;
+}
+
+.greenLady .imageWrap {
+    position: absolute;
+    bottom: 0;
+}
+
+.greenLady .imageWrap .image {
+    display: flex;
+    align-items: flex-end;
+    right: -15%;
+}
+
+.greenLady .imageWrap .image img{
+    height: 23rem;
+}
+
+@media screen and (min-width: 768px) {
+    .backBlob {
+        height: calc(100vh - 128.8px);
+        position: relative;
+    }
+
+    .padded {
+        padding: 0 3rem;
+    }
+
+    .padded > p {
+        width: 100%;
+    }
+    
+    .backBlob .imageWrap .image img {
+        height: 30rem;
+    }
+
+    .backBlob > h1 {
+        font-size: 5rem;
+    }
+
+    .backBlob > p,
+    .greenLady > p {
+        width: 50%;
+    }
+
+    .backBlob .imageWrap {
+        top: 0;
+        bottom: 5rem;
+    }
+
+    .backBlob .imageWrap .image {
+        height: 95%;
+        right: 0;
+    }
+
+    .backBlob .imageWrap .image img {
+        height: 100%;
+    }
+
+    section.padded button {
+        font-weight: 500;
+    }
+
+    main div.bcWrap {
+        border-radius: 16px;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        background-color: transparent;
+    }
+
+    .companies {
+        margin-bottom: 5rem;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .company:nth-child(4) {
+        display: block;
+    }
+
+    .greenLady {
+        margin-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    hr {
+        opacity: .5;
+        margin: 0 3rem;
+    }
+
+    .greenLady .imageWrap{
+        right: 15%;
+    }
+
+    .greenLady .imageWrap .image{
+        right: 0;
+    }
+
+    .greenLady h1 {
+        width: 80%;
+    }
+}   
+
+@media screen and (min-width: 1353px) {
+    .cards {
+        overflow-x: visible;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        justify-content: space-between;
+    }
+    
+    .card:nth-child(1) {
+        margin-left: 0;
+    }
+
+    .card:nth-child(4) {
+        margin-right: 0;
+    }
 }
