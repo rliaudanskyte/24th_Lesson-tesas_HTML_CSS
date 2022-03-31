@@ -71,7 +71,7 @@ section.padded button::after {
 main div.bcWrap {
     padding-top: 4rem;
     padding-bottom: 1rem;
-    background-image: url('/assets/background.svg');
+    background-image: url('./assets/background.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -284,11 +284,15 @@ hr {
     }
 
     .greenLady .imageWrap{
-        right: 15%;
+        right: 20%;
     }
 
     .greenLady .imageWrap .image{
         right: 0;
+    }
+
+    .greenLady .imageWrap .image img {
+        height: 26rem;
     }
 
     .greenLady h1 {
