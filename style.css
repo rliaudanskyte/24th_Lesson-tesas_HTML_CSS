@@ -160,7 +160,7 @@ section p a {
 }
 
 .priceWrap .row2 div:last-child::before {
-    content: url('/assets/eth.svg');
+    content: url('./assets/eth.svg');
     height: 1.2rem;
     position: relative;
     right: 10px;
